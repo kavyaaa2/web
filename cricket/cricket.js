@@ -109,7 +109,7 @@ var TeamPlay = /** @class */ (function () {
         var _this = this;
         return function () {
             if (_this.c == 0) {
-                _this.ctime = new Timer(20);
+                _this.ctime = new Timer(60);
                 _this.c = 1;
                 current1 = btn1;
                 var element2 = document.getElementById(btn2);
