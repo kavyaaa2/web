@@ -3,50 +3,42 @@ var Table = /** @class */ (function () {
         this.id = num;
         var table = document.createElement("table");
         var div = document.createElement("div");
-        div.setAttribute("class", "tables");
-        div.style.overflow = "auto";
+        div.setAttribute("class", "col-lg-4 tables");
         table.setAttribute("class", "table table-bordered");
         table.style.border = "1.2px solid black";
-        table.style.tableLayout = "fixed";
         table.style.backgroundColor = "white";
-        // table.style.borderCollapse= "collapse";
-        table.style.fontSize = "1px bold";
-        table.style.padding = "1px";
-        table.style.width = "500px";
         table.setAttribute("id", this.id.toString());
         var th = document.createElement("tr");
-        th.setAttribute("class", "thead-dark");
         var td = document.createElement("td");
+        td.style.backgroundColor = "white";
         td.innerText = "TEAM" + this.id;
+        td.style.backgroundColor = "white";
         th.appendChild(td);
         for (var i = 0; i < 6; i++) {
             var td_1 = document.createElement("td");
             td_1.style.padding = "1px";
-            // td.style.border="1px solid black";
-            // td.style.height="2px"
+            td_1.style.backgroundColor = "white";
             td_1.innerText = "B" + (i + 1);
             th.appendChild(td_1);
         }
         var td1 = document.createElement("td");
         td1.innerText = "TOTAL";
+        td1.style.backgroundColor = "white";
         th.appendChild(td1);
         table.appendChild(th);
         for (var i = 0; i < 10; i++) {
             var tr = document.createElement("tr");
             var td_2 = document.createElement("td");
-            // td.style.width="70px";
             td_2.innerHTML = "Player " + (i + 1);
             td_2.style.width = "40px";
             td_2.style.padding = "1px";
-            // td.style.border="1px solid black";
+            td_2.style.backgroundColor = "white";
             tr.appendChild(td_2);
             for (var j = 0; j < 7; j++) {
                 var td_3 = document.createElement("td");
                 td_3.setAttribute("id", this.id.toString() + i.toString() + j.toString());
-                // td.style.width="40px";
-                // td.style.height="2px"
+                td_3.style.backgroundColor = "white";
                 td_3.style.padding = "0px";
-                // td.style.border="1px solid black";
                 tr.appendChild(td_3);
             }
             table.appendChild(tr);
@@ -119,7 +111,8 @@ var TeamPlay = /** @class */ (function () {
                 var run = Math.floor(Math.random() * (6 + 1));
                 _this.total += run;
                 _this.playerTotal += run;
-                document.getElementById("score" + team).innerText = _this.total.toString();
+                document.getElementById("score" + team).innerText =
+                    _this.total.toString();
                 var td = document.getElementById(team.toString() + _this.i.toString() + _this.j.toString());
                 if (td != null) {
                     td.innerText = run.toString();
@@ -161,7 +154,8 @@ var TeamPlay = /** @class */ (function () {
         return function () {
             console.log("hello from timeout");
             if (_this.playerTotal != 0) {
-                document.getElementById(_this.t + _this.i.toString() + 6).innerText = _this.playerTotal.toString();
+                document.getElementById(_this.t + _this.i.toString() + 6).innerText =
+                    _this.playerTotal.toString();
                 _this.playerTotal = 0;
             }
             var element1 = document.getElementById(_this.current);
@@ -189,7 +183,12 @@ var Winner = /** @class */ (function () {
                     k = j;
                 }
             }
-            document.getElementById("result").innerHTML = "MATCH WON BY: <br>Team 1" + "<br> MAN OF THE MATCH: <br> Player" + (k + 2) + "<br> Score:" + max;
+            document.getElementById("result").innerHTML =
+                "MATCH WON BY: <br>Team 1" +
+                    "<br> MAN OF THE MATCH: <br> Player" +
+                    (k + 2) +
+                    "<br> Score:" +
+                    max;
             // alert("Team 1 won")
         }
         else if (score1 < score2) {
@@ -205,13 +204,17 @@ var Winner = /** @class */ (function () {
                     k = j;
                 }
             }
-            document.getElementById("result").innerHTML = "<b>MATCH WON BY:<b> <br>Team 2" + "<br> <b>MAN OF THE MATCH:</b> <br> PLAYER " + (k + 2) + "<br> <b>Score: </b>" + max;
-            // alert("Team 2 won")
+            document.getElementById("result").innerHTML =
+                "<b>MATCH WON BY:<b> <br>Team 2" +
+                    "<br> <b>MAN OF THE MATCH:</b> <br> PLAYER " +
+                    (k + 2) +
+                    "<br> <b>Score: </b>" +
+                    max;
         }
         else {
             document.getElementById("tie").innerText = "Team 1 won";
-            document.getElementById("result").innerHTML = "<b> THE MATCH HAS BEEN DRAWN";
-            // alert("it's a tie")
+            document.getElementById("result").innerHTML =
+                "<b> THE MATCH HAS BEEN DRAWN";
         }
     }
     return Winner;
