@@ -123,7 +123,7 @@ class TeamPlay{
     bat(team:number,btn1:string,btn2:string):()=> void {
         return()=>{
             if(this.c==0){
-                this.ctime=new Timer(20)
+                this.ctime=new Timer(60)
                 this.c=1;
                 
                 current1=btn1;
