@@ -1,0 +1,22 @@
+.div.genbutton.text-center{
+    flex:1;
+    
+
+}
+/* .table.table-bordered{
+    flex:1
+} */
+tr {
+    line-height: 15px;
+    min-height: 15px;
+    height: 15px;
+ }
+ /* body {
+    height: 800px;
+} */
+.table100, .row, .container, .table-responsive, .table-bordered  {
+    height: 100%;
+}
+/* div{
+    flex:1
+} */
